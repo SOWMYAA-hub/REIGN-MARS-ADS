@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 10%;
+  background: #1C2529;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-img {
+  height: 40px;
+  width: 40px;
+  object-fit: contain;
+}
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #A1D1B1;
+  letter-spacing: 1px;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  transition: 0.3s;
+  padding-bottom: 5px;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: #A1D1B1;
+}
+/* Aura glow underline */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #00c6ff, #A1D1B1);
+  box-shadow: 0 0 8px #00c6ff;
+  transition: width 0.3s ease-in-out;
+  border-radius: 5px;
+}
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+
+/* ---------- Background Animation ---------- */
+.bg-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, #00151a, #021b27, #001f2f, #042a2e);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  z-index: -2;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ---------- Hero Section ---------- */
+.hire-hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: left;
+  padding: 0 10%;
+}
+
+.hire-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.hire-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+  animation: slideLeft 1s ease forwards;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  color: #00ffc6;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: #e8e8e8;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.hero-text span {
+  color: #00ffc6;
+  font-weight: 600;
+}
+
+.hire-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: #00ffc6;
+  color: #000;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 255, 198, 0.4);
+}
+
+.hire-btn:hover {
+  background: #00d4a4;
+  transform: translateY(-4px);
+  box-shadow: 0 0 35px rgba(0, 255, 198, 0.6);
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+  animation: slideRight 1.2s ease forwards;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 450px;
+  animation: float 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 25px rgba(0, 255, 198, 0.3));
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(-80px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(80px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ---------- Why Hire Us ---------- */
+.why-hire {
+  text-align: center;
+  padding: 100px 10%;
+}
+
+.why-hire h2 {
+  color: #00ffc6;
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.why-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 25px rgba(0, 255, 198, 0.1);
+  transition: 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 35px rgba(0, 255, 198, 0.3);
+}
+
+.why-card h3 {
+  color: #00ffc6;
+  margin-bottom: 15px;
+}
+
+/* ---------- Contact US Section ---------- */
+/* Cosmic CTA Section */
+.cta-section {
+    width: 100%;
+    padding: 80px 10%;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cta-container {
+    text-align: center;
+    max-width: 700px;
+}
+.magnetic-cta-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  background: linear-gradient(120deg, #00151a, #021b27, #001f2f, #042a2e); /* match page background */
+}
+
+.magnetic-cta-container {
+  perspective: 1000px;
+}
+
+.magnetic-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  max-width: 90%;
+  height: 100px;
+  background: linear-gradient(135deg, #ff8a00, #e52e71);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.magnetic-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+}
+
+
+/* ---------- Footer ---------- */
+.about-footer {
+  background: #000;
+  padding: 30px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.about-footer p {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .hire-container { flex-direction: column; text-align: center; }
+  .hero-text, .hero-image { animation: none; }
+  .hero-text h1 { font-size: 2rem; }
+  .hero-image img { max-width: 350px; }
+}
