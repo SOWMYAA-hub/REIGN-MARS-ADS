@@ -1,0 +1,117 @@
+/* Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  background: #1C2529;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 10%;
+  background: #1C2529;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-img {
+  height: 40px;
+  width: 40px;
+  object-fit: contain;
+}
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #A1D1B1;
+  letter-spacing: 1px;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  transition: 0.3s;
+  padding-bottom: 5px;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: #A1D1B1;
+}
+/* Aura glow underline */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #00c6ff, #A1D1B1);
+  box-shadow: 0 0 8px #00c6ff;
+  transition: width 0.3s ease-in-out;
+  border-radius: 5px;
+}
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, rgba(161,209,177,0.9), rgba(0,102,204,0.85), rgba(28,37,41,0.95)),
+              url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+.hero h4.subtitle {
+  font-style: italic;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #A1D1B1;
+}
+.hero .btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: #1C2529;
+  color: #A1D1B1;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.hero .btn:hover {
+  background: #A1D1B1;
+  color: #1C2529;
+}
